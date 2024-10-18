@@ -1,18 +1,10 @@
 
 import java.util.Scanner;
 import modelos.Coche;
+import modelos.Motos;
 import modelos.Vehiculo;
 import servicios.GestionarVehiculos;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author HOME
- */
 public class Main {
     public static void main(String[] args) {
         GestionarVehiculos gestionarVehiculos = new GestionarVehiculos();
@@ -43,10 +35,25 @@ public class Main {
                     System.out.print("Número de puertas: ");
                     int numeroPuertas = scanner.nextInt();
                     Vehiculo vehiculo = new Coche(marca, modelo, numeroPuertas);
+                    gestionarVehiculos.agregarVehiculo(vehiculo);
                 } else if (opcionMenu.equalsIgnoreCase("moto") && opcionMenu.equalsIgnoreCase("2")) {
                     System.out.println("Cilindraje (cc): ");
                     int cilindraje = scanner.nextInt();
+                    Vehiculo vehiculo = new Motos(marca, modelo, cilindraje);
+                    gestionarVehiculos.agregarVehiculo(vehiculo);
                 }
+                
+            }
+            
+            System.out.println("Lista de Vehiculos almacenados: ");
+            gestionarVehiculos.mostrarVehiculos();
+            
+            System.out.println("\n¿Desea eliminar un Vehiculo?: ");
+            System.out.println("1. Si");
+            System.out.println("2. No");
+            String opcionEliminar = scanner.nextLine();
+            
+            if (opcionEliminar.equalsIgnoreCase("si") && opcionEliminar.equalsIgnoreCase("1")) {
                 
             }
         } while (!continuar);

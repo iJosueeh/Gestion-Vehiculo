@@ -10,10 +10,13 @@ package modelos;
  */
 public class Vehiculo implements IVehiculo {
 
+    private int idVehiculo;
+    private int contador;
     private String marca;
     private String modelo;
 
     public Vehiculo(String marca, String modelo) {
+        this.idVehiculo = contador++;
         this.marca = marca;
         this.modelo = modelo;
     }
@@ -34,8 +37,13 @@ public class Vehiculo implements IVehiculo {
         this.modelo = modelo;
     }
 
+    public int getIdVehiculo() {
+        return idVehiculo;
+    }
+
     @Override
     public void imprimirDatos(){
+        System.out.println("ID: " + getIdVehiculo());
         System.out.println("Marca: " + getMarca());
         System.out.println("Modelo: " + getModelo());
     }

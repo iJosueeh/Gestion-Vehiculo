@@ -37,6 +37,7 @@ public class GestionarVehiculos implements IGestionVehiculos {
         for (Vehiculo vehiculo : vehiculos) {
             vehiculo.imprimirDatos();
             vehiculo.hacerRuido();
+            System.out.println("----------------------");
         }
     }
     

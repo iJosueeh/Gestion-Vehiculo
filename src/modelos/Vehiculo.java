@@ -11,7 +11,7 @@ package modelos;
 public class Vehiculo implements IVehiculo {
 
     private int idVehiculo;
-    private int contador;
+    private static int contador = 1;
     private String marca;
     private String modelo;
 

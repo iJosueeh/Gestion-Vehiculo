@@ -19,24 +19,27 @@ public class GestionarVehiculos implements IGestionVehiculos {
     public GestionarVehiculos() {
         this.vehiculos = new ArrayList<>();
     }
-    
+
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+ 
     @Override
     public void agregarVehiculo(Vehiculo vehiculo) {
         vehiculos.add(vehiculo);
-        System.out.println("Vehiculo almacenado correctamente.");
+        System.out.println("Vehiculo almacenado correctamente.\n");
     }
 
     @Override
     public void eliminarVehiculo(Vehiculo vehiculo) {
         vehiculos.remove(vehiculo);
-        System.out.println("Vehiculo eliminado correctamente.");
+        System.out.println("Vehiculo eliminado correctamente.\n");
     }
 
     @Override
     public void mostrarVehiculos() {
         for (Vehiculo vehiculo : vehiculos) {
             vehiculo.imprimirDatos();
-            vehiculo.hacerRuido();
             System.out.println("----------------------");
         }
     }

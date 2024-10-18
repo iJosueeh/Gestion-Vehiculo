@@ -27,8 +27,7 @@ public class Coche extends Vehiculo {
     
     @Override
     public void imprimirDatos() {
-        System.out.println("Marca:" + getMarca());
-        System.out.println("Modelo: " + getModelo());
+        super.imprimirDatos();
         System.out.println("Número de puertas: " + getNumeroPuertas());
     }
     
